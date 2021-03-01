@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+  h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  }
+  p {
+  color:white; 
+  height:80;
+  text-align: center;
+  }
+  </style>
+
+<h1>
+    {{filename}}
+</h1>
+
+<img src={{url}}>
+<br>
+<audio controls> 
+  <source src={{wavurl}}>
+  
+</audio>
+<br>
+<form action='/results' method = 'post'>
+
+
+<input type="hidden" value="{{url}}" name='predfiles' id='predfiles'>
+
+
+  <p> <input type='submit' value='Predict'/></p>
+ 
+</form>
+<br>
+<h1>
+  {{filename2}}
+</h1>
+
+<img src={{url2}}>
+<br>
+
+<audio controls> 
+<source src={{wavurl2}}>
+
+</audio>
+
+<br>
+<form action='/results' method = 'post'>
+<input type="hidden" value="{{url2}}" name='predfiles' id='predfiles'>
+
+
+  <p> <input type='submit' value='Predict'/></p>
+  </form>
+
+<form action="{{url_for('eda')}}">
+  <input type="submit" value="Graph other columns" />
+  </form>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+  h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  }
+  p {
+  color:white; 
+  height:80;
+  text-align: center;
+  }
+  </style>
+
+<h1>
+  Prediction: {{prediction}}
+</h2>
+
+<audio controls class = 'image1'> 
+  <source src='{{wav}}'>
+  
+</audio>
+<!-- <br>
+<img src='{{resp}}' class ='image1'/>
+<br>
+<img src="{{pimage}}" class ='image1'/>
+<br>
+<h1>
+  Actual: {{actual}}
+</h2>
+
+<img src='{{aimage}}' class ='image1'/> -->
+
+<form action="{{url_for('upload')}}">
+  <input type="submit" value="Predict again" />
+  </form>
+{% endblock content %}

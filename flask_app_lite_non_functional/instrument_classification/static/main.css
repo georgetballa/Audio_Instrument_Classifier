@@ -1,0 +1,176 @@
+body {
+  background: #522a2a !important;
+  color: #472b2b;
+  margin-top: 5rem;
+  /* background-image: url('https://webstockreview.net/images/concert-clipart-wind-band-1.gif'); */
+  /* background-size: cover; */
+  background-color: #522a2a !important;
+  }
+
+.carousel-item {
+  width: 600px;
+  overflow: hidden;
+  width: 100%;
+  
+  
+  }
+.carousel-item img {
+  max-width: 800px;
+  
+  max-height: 1200px;
+}
+
+.carousel-control { 
+  opacity: .1!important;
+  background-color: #522a2a
+}
+
+
+.col-md-auto {
+    background: #522a2a;
+    color: #472b2b;
+    margin-top: 5rem;
+    /* background-image: url('https://webstockreview.net/images/concert-clipart-wind-band-1.gif'); */
+    /* background-size: cover; */
+    background-color: #522a2a;
+    }
+#slides{
+    color: #522a2a;
+    background-color: #522a2a !important;
+  }
+/* body::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(98, 9, 9, 0.63);
+} */
+
+#eda {
+  padding-left:26px;
+  width:125px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+.bg-steel {
+  background-color: #444444;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #522a2a;
+  padding: 10px 20px;
+  border: 1px solid #522a2a;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #4e4e4e;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+p.form-inputs {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image1 {
+  display: block;
+  max-width: 80%;
+  
+  max-height: 600px;
+  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image2 {
+  /* max-width: 500px; */
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tflow {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image3 {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}

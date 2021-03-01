@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action='/results' method = 'post'>
+
+  <style>
+    .important-paragraph{
+      color:rgb(255, 255, 255)
+    }
+    </style>
+
+<p class = 'important-paragraph form-inputs'>
+  <label for='predfiles'>Instrument: </label>
+  <select name='predfiles' id='predfiles'>
+    {% for each in filename_list %}
+      <option value="{{each}}">{{each}}</option>
+    {% endfor %}
+  </select>
+</p>
+
+
+
+  <p> <input type='submit' value='Submit'/></p>
+</form>
+{% endblock content %}

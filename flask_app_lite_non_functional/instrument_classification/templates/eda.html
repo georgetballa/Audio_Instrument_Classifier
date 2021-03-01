@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class='important-paragraph'>Files from Final Validation Set</h1>
+  <form action="/graphs" method = 'post' id ='eda'>
+
+    <style>
+      .important-paragraph{
+        color:rgb(255, 255, 255)
+      
+      }
+      
+      </style>
+
+    <p class = 'important-paragraph form-inputs'>
+      <label for='files'>Instrument 1:    </label>
+      
+      <select name='files' id='files'>
+        {% for each in filename_list %}
+          <option value="{{each}}">{{each}}</option>
+        {% endfor %}
+      </select>
+    </p>
+
+    <p class = 'important-paragraph form-inputs'>
+      <label for='files2'>Instrument 2: </label>
+      <br>
+      <select name='files2' id='files2'>
+        {% for each in filename_list %}
+          <option value="{{each}}">{{each}}</option>
+        {% endfor %}
+      </select>
+    </p>
+
+    
+
+    <p>
+      <input type='submit' value='Submit'/>
+    </p>
+  </form>
+{% endblock content %}

@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<html>
+  <style>
+  .important-paragraph{
+    color:rgb(255, 255, 255);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: center;
+
+  }
+  </style>
+<div id="slides">
+
+    <div id="myCarousel2" class="carousel" data-interval="false" data-ride="carousel">
+
+        <div class="carousel-inner">
+    
+            <div class="carousel-item active">
+                <h1 class='important-paragraph'>A Look at the Data</h1>
+                <br>
+                <p class = 'important-paragraph'>
+                    The sound files used for the project were downloaded from the <a href="https://magenta.tensorflow.org/datasets/nsynth">NSynth Website</a>.<br />
+                    The files were in WAV format, and were accompanied by a .json file that described the contents.<br />
+
+                    <!-- <img src="./static/images/df.png" class  = 'tflow'/>     -->
+                </p>
+                <br>
+                <img src="./static/images/instcount.png" class = 'image2'/>
+                <br>
+                <br>
+                <p class = 'important-paragraph'>
+                    
+                    In total, there are 289,205 instrument sounds.
+                    These files were split into 11 instrument families.<br />
+                    Classes were balanced into 5000 WAV files per class and split into 80% training data and 20% testdata.
+                </p>
+                <br>
+                <br>
+            </div>
+
+            <div class="carousel-item">
+                <img src="./static/images/boxplot.png" class  = 'image2'/>
+                <br>
+                <br>
+                
+                
+            </div>
+
+            <div class="carousel-item">
+                <h1 class='important-paragraph'>Data Processing</h1>
+                <p class = 'important-paragraph'>   
+                    Librosa, a Python Library built for working with audio, was used to extract spectrogram data. 
+                    The data was converted into an image file. The goal is to classify instuments based on these images.
+                </p>
+                <br>
+                <br>
+                <h3 class='important-paragraph'>Sample of a Spectrogram</h3>
+                <img src="./static/images/specsample.png" class = 'image2'/>
+                <br>
+                <br>
+            </div>>
+            <div class="carousel-item">
+                <h1 class='important-paragraph'>About the Model</h1>
+                <p class = 'important-paragraph'>
+                    The base model used for this project is the VGG19 Convolutional Neural Network. Known for it's performance on the imagenet challenge, 
+                    I chose this model due to it being pre-trained to detect features from images.<br /><br />
+                    A technique called transfer learning allows for the use of pre-trained models, while adding on your own layers to the end. 
+                    This allows for good performance while keeping the cost of training low. Layers can be unfrozen as needed, 
+                    and it is even possible to train on the full model if desired.
+                    
+                </p>
+                <img src="./static/images/transfer.png" class = 'image2'/>    
+                <br>
+                <br>
+            </div>>
+            <div class="carousel-item">
+                <h3 class='important-paragraph'>Training the Model</h3>
+                <p class = 'important-paragraph'>
+                    
+                    The data was trained up to 60% accuracy on my computer. The model was saved and loaded into an AWS instance to complete training.
+                </p>
+                <br>
+                <br>
+                <img src="./static/images/train_10_60.png" class  = 'tflow'/>
+                <img src="./static/images/loss_10_60.png" class  = 'tflow'/>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                </div>        
+            <div class="carousel-item">
+                <h3 class='important-paragraph'>Training on AWS EC2</h3>
+                <p class = 'important-paragraph'>       
+                    Loaded into AWS, an additional layer was unfrozen and the model was allowed to train overnight. It completed with 99% train accuracy and 92% validation accuracy.
+                </p>
+                <br>
+                <br>
+                <img src="./static/images/train_80_100.png" class  = 'tflow'/>
+                <img src="./static/images/loss_80_100.png" class  = 'tflow'/>
+                <br>
+                <br>
+            </div>
+            <div class="carousel-item">
+                <h1 class='important-paragraph'>Predictions on Validation Set</h1>
+                <p class = 'important-paragraph'>
+                    
+                    
+                    After training of the model was complete, an additional set of data was collected.<br />
+                    The validation set consisted of 12,678 files with imbalanced classes.<br/>
+                    The model performed with an accuracy of 71% on this previously unseen data.
+                    The confusion matrix below describes the predictions made on the validation set.
+                </p>
+
+                <br>
+                <br>
+                
+                <img src="./static/images/confusion.png" class = 'image3'/>
+            </div>
+        </div>
+            <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <!-- <span class="sr-only">Previous</span> -->
+            </a>
+            <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <!-- <span class="sr-only">Next</span> -->
+            </a>
+        
+    </div>  
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+{% endblock content %}

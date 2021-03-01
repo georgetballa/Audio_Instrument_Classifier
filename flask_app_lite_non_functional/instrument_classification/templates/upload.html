@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action='/results2' method = 'post'>
+
+  <style>
+    .important-paragraph{
+      color:rgb(255, 255, 255)
+    }
+    </style>
+
+
+  <input type="file" id="myFile" name="myFile">
+  
+  <p> <input type='submit' value='Submit'/></p>
+</form>
+{% endblock content %}
