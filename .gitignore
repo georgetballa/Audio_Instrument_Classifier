@@ -131,9 +131,7 @@ dmypy.json
 * .tfrecord
 * .npy
 *.wav
-*.png
-*.jpg
-*.jpeg
+
 *.csv
 *.pb
 
